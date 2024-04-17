@@ -15,7 +15,7 @@ const LandingPage3 = props => {
         style={{
           justifyContent: 'flex-end',
         }}>
-        <Pressable onPress={() => props.navigation.navigate('Home Page')}>
+        <Pressable onPress={() => props.navigation.navigate('Let U In')}>
           <Text style={styles.skip_text}>Skip</Text>
         </Pressable>
       </View>
@@ -45,8 +45,8 @@ const LandingPage3 = props => {
             <Image source={require('../Images/Slider3.png')} />
           </View>
           <View>
-            <Pressable onPress={() => props.navigation.navigate('Home Page')}>
-              <GetStartedArrow/>
+            <Pressable onPress={() => props.navigation.navigate('Let U In')}>
+              <GetStartedArrow title="Get Started"/>
             </Pressable>
           </View>
         </View>
