@@ -7,6 +7,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import HomePage from './Components/Dashboard/HomePage';
 import LetYouIn from './Components/Login/LetYouIn';
 import GettingStarted from './Components/Login/GettingStarted';
+import LetSignIn from './Components/Login/LetSignIn';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
         <Stack.Screen name="Home Page" component={HomePage} />
         <Stack.Screen name="Getting Started" component={GettingStarted} />
         <Stack.Screen name="Let U In" component={LetYouIn} />
+        <Stack.Screen name="Let Sign In" component={LetSignIn} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

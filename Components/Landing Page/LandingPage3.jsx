@@ -1,6 +1,5 @@
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import RightArrow from '../Vector-Components/RightArrow';
 import GetStartedArrow from '../Vector-Components/GetStartedArrow';
 const LandingPage3 = props => {
   return (

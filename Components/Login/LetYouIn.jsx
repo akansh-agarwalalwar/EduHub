@@ -1,11 +1,10 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Icons2 from 'react-native-vector-icons/AntDesign';
 import GoogleIcon from '../Vector-Components/GoogleIcon';
 import AppleIcon from '../Vector-Components/AppleIcon';
 import GetStartedArrow from '../Vector-Components/GetStartedArrow';
 
-const LetYouIn = (props) => {
+const LetYouIn = props => {
   return (
     <View
       style={{
@@ -22,6 +21,7 @@ const LetYouIn = (props) => {
             fontFamily: 'Jost',
             fontSize: 24,
             fontWeight: 'bold',
+            textAlign:'center'
           }}>
           Let's You In
         </Text>
@@ -47,7 +47,9 @@ const LetYouIn = (props) => {
             ( Or )
           </Text>
           <View style={{top: 20}}>
+            <Pressable onPress={()=> props.navigation.navigate("Let Sign In")}>
             <GetStartedArrow title="Sign In" />
+            </Pressable>
           </View>
           <View
             style={{
