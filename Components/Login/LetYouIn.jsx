@@ -60,7 +60,7 @@ const LetYouIn = props => {
             }}>
             <Text style={styles.sign_up}>Don't Have An Account? </Text>
             <Pressable
-              onPress={() => props.navigation.navigate('Getting Started')}>
+              onPress={() => props.navigation.navigate('SignUp')}>
               <Text style={{color: '#3AD3CD', textDecorationLine: 'underline'}}>
                 SIGN UP
               </Text>

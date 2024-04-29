@@ -1,15 +1,11 @@
-import {Image, StyleSheet, Text, View, TextInput, Pressable, TouchableOpacity} from 'react-native';
-import React from 'react';
-import CheckBox from '@react-native-community/checkbox';
+import {Image, StyleSheet, Text, View, TextInput, Pressable} from 'react-native'
+import React from 'react'
 import Icon from 'react-native-vector-icons/Fontisto';
 import Icon2 from 'react-native-vector-icons/Feather';
-import {useState} from 'react';
 import BigSignIn from '../Vector-Components/BigSignIn';
 import GoogleIcon from '../Vector-Components/GoogleIcon';
 import AppleIcon from '../Vector-Components/AppleIcon';
-const LetSignIn = (props) => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
-
+const SignUp = (props) => {
   return (
     <View style={{backgroundColor: '#F5F9FF', flex: 1}}>
       <View style={{marginHorizontal: 30, marginTop: 30}}>
@@ -27,10 +23,10 @@ const LetSignIn = (props) => {
               fontWeight: '600',
               fontStyle: 'normal',
             }}>
-            Let's Sign In.!
+            Getting Started..!
           </Text>
           <Text style={{color: '#545454', fontSize: 16}}>
-            Login to Your Account to Continue your Courses
+          Create an Account to Continue your allCourses
           </Text>
         </View>
         <View style={{flexDirection: 'column', marginTop: 20}}>
@@ -45,24 +41,11 @@ const LetSignIn = (props) => {
         </View>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
-          <View>
-            <CheckBox
-              disabled={false}
-              value={toggleCheckBox}
-              onValueChange={newValue => setToggleCheckBox(newValue)}
-            />
-          </View>
-          <View>
-            <Text style={styles.checkbox_align_text}>Remember Me</Text>
-          </View>
-          <View style={{right: 0, position: 'absolute'}}>
-            <Text style={styles.checkbox_align_text}>Forgot Password?</Text>
-          </View>
+            <Image source={require('../Images/terms_conditions.png')} />
+          <Text style={{color:'#545454', fontSize:13,fontWeight:'800',marginLeft:5}}>Agree to Terms & Conditions</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={()=> props.navigation.navigate('Home Page')}>
-          <BigSignIn title='Sign In '/>
-          </TouchableOpacity>
+          <BigSignIn title='Sign Up '/>
         </View>
         <View style={{alignItems:'center', marginTop:30}}>
           <Text>Or Continue With</Text>
@@ -76,40 +59,35 @@ const LetSignIn = (props) => {
           </View>
         </View>
         <View style={{flexDirection:'row',justifyContent:'center', marginTop:15}}>
-          <Text>Don't Have An Account? </Text>
-          <Pressable onPress={() => props.navigation.navigate('SignUp')}>
+          <Text>Already Have An Account? </Text>
+          <Pressable onPress={() => props.navigation.navigate('SignIn')}>
   
           <Text style={{color: '#3AD3CD', textDecorationLine: 'underline'}}>
-                SIGN UP
+                Sign In
               </Text>
               </Pressable>
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default LetSignIn;
+export default SignUp
 
 const styles = StyleSheet.create({
-  input_box: {
-    backgroundColor: '#FFF',
-    width: 360,
-    height: 60,
-    marginTop: 20,
-    borderRadius: 15,
-    flexDirection: 'row',
-  },
-  icon_of_input: {
-    alignItems: 'center',
-    height: 50,
-    width: 40,
-    marginLeft: 20,
-    marginTop: 15,
-  },
-  checkbox_align_text: {
-    fontSize: 15,
-    color: '#545454',
-    fontWeight: '700',
-  },
-});
+    input_box: {
+        backgroundColor: '#FFF',
+        width: 360,
+        height: 60,
+        marginTop: 20,
+        borderRadius: 15,
+        flexDirection: 'row',
+      },
+      icon_of_input: {
+        alignItems: 'center',
+        height: 50,
+        width: 40,
+        marginLeft: 20,
+        marginTop: 15,
+      },
+})

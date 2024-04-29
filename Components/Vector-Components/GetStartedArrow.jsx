@@ -3,32 +3,7 @@ import React from 'react';
 import Icons2 from 'react-native-vector-icons/AntDesign';
 const GetStartedArrow = ({title, onPress, style}) => {
   return (
-    // <View
-    //   style={{
-    //     backgroundColor: '#3AD3CD',
-    //     width: 240,
-    //     height: 60,
-    //     alignItems: 'flex-end',
-    //     borderRadius: 50,
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //   }}>
-    //   <Text
-    //     style={{
-    //       fontFamily: 'Jost',
-    //       fontSize: 28,
-    //       color: '#FFF',
-    //       fontWeight: '700',
-    //       left: 15,
-    //       bottom: 10,
-    //     }}>
-    //     Get Started
-    //   </Text>
-    //   <View style={styles.arrowIcon}>
-    //     <Icons2 name="arrowright" size={40} color={'#3AD3CD'} />
-    //   </View>
-    // </View>
-    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
+    <View style={[styles.button, style]} >
       <Text style={styles.buttonText}>{title}</Text>
       <View
         style={{
@@ -47,7 +22,7 @@ const GetStartedArrow = ({title, onPress, style}) => {
           style={{alignItems: 'center', justifyContent: 'center'}}
         />
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 

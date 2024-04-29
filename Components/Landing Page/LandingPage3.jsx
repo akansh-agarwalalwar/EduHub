@@ -1,4 +1,4 @@
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, StyleSheet, Text, View,TouchableOpacity} from 'react-native';
 import React from 'react';
 import GetStartedArrow from '../Vector-Components/GetStartedArrow';
 const LandingPage3 = props => {
@@ -44,9 +44,9 @@ const LandingPage3 = props => {
             <Image source={require('../Images/Slider3.png')} />
           </View>
           <View>
-            <Pressable onPress={() => props.navigation.navigate('Let U In')}>
+            <TouchableOpacity onPress={() => props.navigation.navigate('Let U In')}>
               <GetStartedArrow title="Get Started"/>
-            </Pressable>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
