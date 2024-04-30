@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 10,
-    gap: 10,
+    gap: 20,
+    marginTop:20
   },
   icons_text: {
     color: '#545454',

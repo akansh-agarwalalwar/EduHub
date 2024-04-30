@@ -1,11 +1,18 @@
-import {Image, StyleSheet, Text, View, TextInput, Pressable} from 'react-native'
-import React from 'react'
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Pressable,
+} from 'react-native';
+import React from 'react';
 import Icon from 'react-native-vector-icons/Fontisto';
 import Icon2 from 'react-native-vector-icons/Feather';
 import BigSignIn from '../Vector-Components/BigSignIn';
 import GoogleIcon from '../Vector-Components/GoogleIcon';
 import AppleIcon from '../Vector-Components/AppleIcon';
-const SignUp = (props) => {
+const SignUp = props => {
   return (
     <View style={{backgroundColor: '#F5F9FF', flex: 1}}>
       <View style={{marginHorizontal: 30, marginTop: 30}}>
@@ -15,7 +22,7 @@ const SignUp = (props) => {
             style={{height: 170, width: 280}}
           />
         </View>
-        <View style={{marginTop:15}}>
+        <View style={{marginTop: 15}}>
           <Text
             style={{
               color: '#202244',
@@ -26,7 +33,7 @@ const SignUp = (props) => {
             Getting Started..!
           </Text>
           <Text style={{color: '#545454', fontSize: 16}}>
-          Create an Account to Continue your allCourses
+            Create an Account to Continue your allCourses
           </Text>
         </View>
         <View style={{flexDirection: 'column', marginTop: 20}}>
@@ -41,53 +48,74 @@ const SignUp = (props) => {
         </View>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
-            <Image source={require('../Images/terms_conditions.png')} />
-          <Text style={{color:'#545454', fontSize:13,fontWeight:'800',marginLeft:5}}>Agree to Terms & Conditions</Text>
+          <Image source={require('../Images/terms_conditions.png')} />
+          <Text
+            style={{
+              color: '#545454',
+              fontSize: 13,
+              fontWeight: '800',
+              marginLeft: 5,
+            }}>
+            Agree to Terms & Conditions
+          </Text>
         </View>
         <View>
-          <BigSignIn title='Sign Up '/>
+          <Pressable onPress={() => props.navigation.navigate('Fill Your Profile')}>
+          <BigSignIn title="Sign Up " />
+          </Pressable>
         </View>
-        <View style={{alignItems:'center', marginTop:30}}>
+        <View style={{alignItems: 'center', marginTop: 30}}>
           <Text>Or Continue With</Text>
         </View>
-        <View style={{flexDirection:'row', alignItems:'center', marginTop:30, justifyContent:'space-between', marginHorizontal:120}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: 30,
+            justifyContent: 'space-between',
+            marginHorizontal: 120,
+          }}>
           <View>
-            <GoogleIcon/>
+            <GoogleIcon />
           </View>
           <View>
-            <AppleIcon/>
+            <AppleIcon />
           </View>
         </View>
-        <View style={{flexDirection:'row',justifyContent:'center', marginTop:15}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'center',
+            marginTop: 15,
+          }}>
           <Text>Already Have An Account? </Text>
           <Pressable onPress={() => props.navigation.navigate('SignIn')}>
-  
-          <Text style={{color: '#3AD3CD', textDecorationLine: 'underline'}}>
-                Sign In
-              </Text>
-              </Pressable>
+            <Text style={{color: '#3AD3CD', textDecorationLine: 'underline'}}>
+              Sign In
+            </Text>
+          </Pressable>
         </View>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;
 
 const styles = StyleSheet.create({
-    input_box: {
-        backgroundColor: '#FFF',
-        width: 360,
-        height: 60,
-        marginTop: 20,
-        borderRadius: 15,
-        flexDirection: 'row',
-      },
-      icon_of_input: {
-        alignItems: 'center',
-        height: 50,
-        width: 40,
-        marginLeft: 20,
-        marginTop: 15,
-      },
-})
+  input_box: {
+    backgroundColor: '#FFF',
+    width: 360,
+    height: 60,
+    marginTop: 20,
+    borderRadius: 15,
+    flexDirection: 'row',
+  },
+  icon_of_input: {
+    alignItems: 'center',
+    height: 50,
+    width: 40,
+    marginLeft: 20,
+    marginTop: 15,
+  },
+});

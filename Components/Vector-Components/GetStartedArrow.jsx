@@ -10,7 +10,9 @@ const GetStartedArrow = ({title, onPress, style}) => {
           backgroundColor: '#FFF',
           alignItems: 'center',
           borderRadius: 30,
-          marginRight: 10,
+          right:0,
+          position:'absolute',
+          marginRight:10,
           height: 40,
           width: 50,
           justifyContent: 'center',
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontWeight: '700',
     alignItems: 'center',
-    left: 15,
     justifyContent: 'center',
+    marginLeft:-30
   },
 });

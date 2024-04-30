@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View , TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 import Icons2 from 'react-native-vector-icons/AntDesign';
-const BigSignIn = ({title, onPress, style}) => {
+const BigSignIn = ({title, style}) => {
   return (
-    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
+    <View style={[styles.button, style]}>
       <Text style={styles.buttonText}>{title}</Text>
       <View
         style={{
@@ -25,7 +25,7 @@ const BigSignIn = ({title, onPress, style}) => {
           style={{alignItems: 'center', justifyContent: 'center'}}
         />
       </View>
-    </TouchableOpacity>
+    </View>
   )
 }
 
