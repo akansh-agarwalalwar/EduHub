@@ -1,5 +1,5 @@
 package com.eduhub
-
+import org.pgsqlite.SQLitePluginPackage; // new code
 import android.app.Application
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
@@ -42,4 +42,6 @@ class MainApplication : Application(), ReactApplication {
     }
     ReactNativeFlipper.initializeFlipper(this, reactNativeHost.reactInstanceManager)
   }
+
+  
 }
