@@ -1,27 +1,29 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const app = express();
-const port = 3000;
 const bodyParser = require('body-parser')
-const {mongoURL} = require('./keys')
+const dotenv = require("dotenv");
+dotenv.config();  
+const PORT = process.env.PORT_NO
+
+// const mongoURL = process.env.MONGO_URL
 require('./user/user')
-
-mongoose.connect(mongoURL)
-
-
-mongoose.connection.on("connected",()=>{
+const authRoutes = require('./auth/authRoutes')
+mongoose.connect(process.env.MONGO_URL)
+app.use(bodyParser.json()) 
+app.use(authRoutes)
+mongoose.connection.on("connected",()=>{ 
   console.log("Mongoose connected") 
 })
 mongoose.connection.on("eroor",(err)=>{
   console.log("Mongoose connection error",err)
 })
+// app.post('/', (req, res) => {
+//     console.log(req.body)
+//   res.send('Hello World!');
+// });
 
-app.use(bodyParser.json())
-app.post('/', (req, res) => {
-    console.log(req.body)
-  res.send('Hello World!');
-});
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server listening at http://localhost:${PORT}`);
 });

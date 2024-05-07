@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
+        // required: true,
     },
     nickname: {
         type: String,
-        required: true,
+        // required: true,
     },
     email: {
         type: String,
@@ -21,27 +21,26 @@ const userSchema = new mongoose.Schema({
     },
     mobile_number: {
         type: String,
-        required: true,
+        // required: true,
     },
     gender: {
         type: String,
-        required: true,
+        // required: true,
     },
     dateOfBirth:{
         type: Date,
-        required: true,
+        // required: true,
     },
 })
 
 // Hash and salt the password before saving the document
-userSchema.pre('save', function(next) {
-    const user = this;
-    if (!user.isModified('password')) return next();
-    bcrypt.hash(user.password, 10, function(err, hash) {
-        if (err) return next(err);
-        user.password = hash;
-        next();
-    });
-});
-
+// userSchema.pre('save', function(next) {
+//     const user = this;
+//     if (!user.isModified('password')) return next();
+//     bcrypt.hash(user.password, 10, function(err, hash) {
+//         if (err) return next(err);
+//         user.password = hash;
+//         next();
+//     });
+// });
 mongoose.model("User", userSchema);
